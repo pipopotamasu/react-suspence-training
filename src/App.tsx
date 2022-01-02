@@ -1,27 +1,27 @@
 import { Suspense, lazy } from 'react';
-import { Routes, Route } from 'react-router-dom';
-import { sum } from '@/utils/sample';
-import logo from '@/assets/logo.svg';
+import { Routes, Route, Link } from 'react-router-dom';
 import '@/assets/App.css';
 
-const Home = lazy(() => import('./Home'));
-const About = lazy(() => import('./About'));
+const UserList = lazy(() => import('./UserList'));
+const PostList = lazy(() => import('./PostList'));
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <button onClick={() => alert(sum(1, 2))} className="underline">
-          click me
-        </button>
         <Suspense fallback="loading...">
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="about" element={<About />} />
+            <Route path="/users" element={<UserList />} />
+            <Route path="/posts" element={<PostList />} />
           </Routes>
         </Suspense>
+        <nav>
+          <Link to="/">Home</Link>
+          <span> | </span>
+          <Link to="/users">Users</Link>
+          <span> | </span>
+          <Link to="/posts">Posts</Link>
+        </nav>
       </header>
     </div>
   );
