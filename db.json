@@ -1,8 +1,8 @@
 {
   "users": [
-    { "id": 1, "name": "Tom", "registered": "01/01/2022" },
-    { "id": 2, "name": "Ann", "registered": "01/01/2021" },
-    { "id": 3, "name": "Max", "registered": "02/02/2022" }
+    { "id": 1, "name": "Tom", "registeredAt": "01/01/2022" },
+    { "id": 2, "name": "Ann", "registeredAt": "01/01/2021" },
+    { "id": 3, "name": "Max", "registeredAt": "02/02/2022" }
   ],
   "posts": [
     { "id": 1, "title": "title 1", "likes": 10 },

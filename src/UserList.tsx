@@ -1,10 +1,23 @@
+import { useQuery } from 'react-query';
+
+type User = {
+  id: number;
+  name: string;
+  registeredAt: string;
+};
+
+function getUsers(): Promise<User[]> {
+  return fetch('http://localhost:3001/api/users').then((res) => res.json());
+}
+
 export default function UserList() {
+  const { data } = useQuery('users', getUsers);
+
   return (
-    <>
-      <main>
-        <h2>Welcome to the homepage!</h2>
-        <p>You can do this, I believe in you.</p>
-      </main>
-    </>
+    <ul>
+      {data?.map((user) => (
+        <li key={user.id}>{user.name}</li>
+      ))}
+    </ul>
   );
 }
