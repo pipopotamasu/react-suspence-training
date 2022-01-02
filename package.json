@@ -13,7 +13,8 @@
     "eslint:fix": "eslint \"src/**/*.{ts,tsx}\" --fix && tsc --noEmit",
     "fix": "yarn prettier:write && yarn eslint:fix",
     "prettier:write": "prettier --write \"src/**/*.{ts,tsx}\"",
-    "prettier:check": "prettier --check \"src/**/*.{ts,tsx}\""
+    "prettier:check": "prettier --check \"src/**/*.{ts,tsx}\"",
+    "mock": "json-server --watch db.json"
   },
   "dependencies": {
     "react": "^17.0.2",
@@ -38,6 +39,7 @@
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
     "jest": "^27.4.5",
+    "json-server": "^0.17.0",
     "postcss": "^8.4.5",
     "prettier": "^2.5.1",
     "tailwindcss": "^3.0.8",
