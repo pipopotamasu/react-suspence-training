@@ -1,0 +1,49 @@
+{
+  "name": "vite-react",
+  "version": "0.0.0",
+  "engines": {
+    "node": "16.x"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "serve": "vite preview",
+    "test": "jest",
+    "eslint": "eslint \"src/**/*.{ts,tsx}\" --cache && tsc --noEmit",
+    "eslint:fix": "eslint \"src/**/*.{ts,tsx}\" --fix && tsc --noEmit",
+    "fix": "yarn prettier:write && yarn eslint:fix",
+    "prettier:write": "prettier --write \"src/**/*.{ts,tsx}\"",
+    "prettier:check": "prettier --check \"src/**/*.{ts,tsx}\""
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^6.2.1"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.0.3",
+    "@types/react": "^17.0.38",
+    "@types/react-dom": "^17.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.8.1",
+    "@typescript-eslint/parser": "^5.8.1",
+    "@vitejs/plugin-react": "^1.1.3",
+    "autoprefixer": "^10.4.1",
+    "eslint": "^8.5.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-jest": "^25.3.2",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "jest": "^27.4.5",
+    "postcss": "^8.4.5",
+    "prettier": "^2.5.1",
+    "tailwindcss": "^3.0.8",
+    "ts-jest": "^27.1.2",
+    "typescript": "^4.5.4",
+    "vite": "^2.7.9"
+  },
+  "packageManager": "yarn@3.1.1"
+}
