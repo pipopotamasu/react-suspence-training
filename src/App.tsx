@@ -6,12 +6,12 @@ import '@/assets/App.css';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <main className="App-main">
         <Suspense fallback="loading...">
           <UserList />
           <PostList />
         </Suspense>
-      </header>
+      </main>
     </div>
   );
 }
