@@ -1,5 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+// @ts-ignore
+import { createRoot } from 'react-dom';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import 'tailwindcss/tailwind.css';
 import './index.css';
@@ -7,8 +8,10 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 
 const queryClient = new QueryClient();
+const container = document.getElementById('root');
+const root = createRoot(container);
 
-ReactDOM.render(
+root.render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
