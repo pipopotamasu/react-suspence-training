@@ -1,21 +1,19 @@
-import { useQuery } from 'react-query';
-
 type User = {
   id: number;
   name: string;
   registeredAt: string;
 };
 
-function getUsers(): Promise<User[]> {
-  return fetch('http://localhost:3001/api/users').then((res) => res.json());
-}
+let users: User[] | undefined;
 
 export default function UserList() {
-  const { data } = useQuery('users', getUsers);
+  if (!users) {
+    throw fetch('http://localhost:3001/api/users').then(async (res) => (users = await res.json()));
+  }
 
   return (
     <ul>
-      {data?.map((user) => (
+      {users.map((user) => (
         <li key={user.id}>{user.name}</li>
       ))}
     </ul>
